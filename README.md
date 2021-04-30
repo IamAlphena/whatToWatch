@@ -1,2 +1,2 @@
-# moviedb
+# What To Watch
 Movie database
