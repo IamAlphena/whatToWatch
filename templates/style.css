@@ -1,0 +1,51 @@
+body {
+    background-color: #1b1717;
+    color: #eeebdd;
+}
+
+header {
+    background-color: #ce1212;
+    width: 99%;
+    border: 1px solid #810000;
+    border-radius: 5px;
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 200px;
+    width: 150px;
+    margin: 25px;
+}
+
+.card img{
+    height: 200px;
+    width: 150px;
+}
+
+.card:hover{
+    opacity: 50%;
+}
+
+.details-container{
+    display: flex;
+}
+
+.desc{
+    /* border: 1px solid #810000;  */
+}
+
+.flexspace{
+    display: flex;
+}
+
+.rating{
+    margin-left: 25%;
+}
+
+.whereToWatch {
+    margin-left: 25%;
+}
