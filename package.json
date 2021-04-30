@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/NoorA1125/whatToWatch/issues"
   },
-  "homepage": "https://github.com/NoorA1125/whatToWatch#readme"
+  "homepage": "https://github.com/NoorA1125/whatToWatch#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7"
+  }
 }
