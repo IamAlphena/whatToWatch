@@ -13,5 +13,12 @@ router.post('signup', (request, response) =>{
         email:request.body.email,
         password:request.body.password,
     })
+    signedupUser.save()
+    .then(data =>{
+        response.json(data);
+    })
+    .catch(error =>{
+        response.json(error);
+    })
 })
 module.exports = router;
