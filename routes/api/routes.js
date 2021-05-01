@@ -8,10 +8,10 @@ router.use("/movie", movieRoutes);
 
 router.post('signup', (request, response) =>{
     const signedupUser = new signupFormCopy({
-        fullname:requestbody.fullname,
-        username:requestbody.username,
-        email:requestbody.email,
-        password:requestbody.password,
+        fullname:request.body.fullname,
+        username:request.body.username,
+        email:request.body.email,
+        password:request.body.password,
     })
 })
 module.exports = router;
