@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require("express").Router();
 const signupForm = require('../models/signupForm');
-const movieRoutes = require("./movie");
+const movieRoutes = require("./api/movie");
 
 // Post routes
 router.use("/movie", movieRoutes);
@@ -20,5 +20,8 @@ router.post('signup', (request, response) =>{
     .catch(error =>{
         response.json(error);
     })
+
 })
+
+router.get('/signin')
 module.exports = router;

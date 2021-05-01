@@ -22,4 +22,4 @@ const signupForm = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('myTable, signupForm');
+module.exports = mongoose.model('watch_db', signupForm);
