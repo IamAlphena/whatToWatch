@@ -1,8 +1,11 @@
 const express = require("express");
-
+const exphbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const routes = require("./routes");
-
+const crypto = require('crypto');
+const authTokens = {};
 const app = express();
 const PORT = process.env.PORT || 3001;
 
