@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seed/seedDB.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   "homepage": "https://github.com/NoorA1125/whatToWatch#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^8.4.3",
     "mongoose": "^5.12.7",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "axios": "^0.18.0"
   }
 }
