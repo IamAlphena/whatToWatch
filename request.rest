@@ -1,16 +1,16 @@
-GET http://localhost:3001/users
+GET http://localhost:3001/api/users
 
 ###
 
-POST http://localhost:3001/users Content-Type: application/json
+POST http://localhost:3001/api/users Content-Type: application/json
 
 {
-"name": "Noor", "password": "password"
+"email": "n@n.com", "name": "Noor", "password": "password"
 }
 
 ###
 
-POST http://localhost:3001/users/login Content-Type: application/json
+POST http://localhost:3001/api/users/login Content-Type: application/json
 
 {
 "name": "Noor", "password": "password"
