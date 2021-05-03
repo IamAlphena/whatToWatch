@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+body {
+  background-color: #1b1717;
+  color: #eeebdd;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: #ce1212;
+  width: 99%;
+  border: 1px solid #810000;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header nav{
+  text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  height: 200px;
+  width: 150px;
+  margin: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card img{
+  height: 200px;
+  width: 150px;
+}
+
+.card:hover{
+  opacity: 50%;
+}
+
+.details-container{
+  display: flex;
+}
+
+.desc{
+  /* border: 1px solid #810000;  */
+}
+
+.flexspace{
+  display: flex;
+}
+
+.rating{
+  margin-left: 25%;
+}
+
+.whereToWatch {
+  margin-left: 25%;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+
+  /* border: 1px solid red; */
 }
