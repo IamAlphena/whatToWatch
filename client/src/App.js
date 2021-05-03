@@ -1,12 +1,22 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from './components/header';
+import Footer from './components/footer';
+import SearchPage from './pages/searchpage';
 
 function App() {
   return (
-    <> 
-    <div>
-      Hello world!!
-    </div>
-    </>
+    <Router>
+      <div>
+      <Header />
+      {/* Nav here */}
+        <Switch>
+          <Route exact path='/' component={SearchPage} />
+        </Switch>
+      <Footer />
+      </div>
+    </Router>
+
   );
 }
 
