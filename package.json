@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seed/seedDB.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
     "firebase": "^8.4.3",
     "mongoose": "^5.12.7",
     "path": "^0.12.7",
+<<<<<<< HEAD
     "react-bootstrap": "^1.5.2"
+=======
+    "axios": "^0.18.0"
+>>>>>>> 739f1ef3489745b9473fa635b8f1ac9d21f058fb
   }
 }

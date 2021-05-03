@@ -1,7 +1,10 @@
 import React from 'react'
+import SearchBar from "../components/Searchbar"
 
 function SearchPage() {
-    return(
+    return(<>
+<SearchBar/>
+    
 <div class="cardContainer">
         <div class="card">
             <img src="https://pics.filmaffinity.com/Jumanji_The_Next_Level-407262058-mmed.jpg"
@@ -16,6 +19,7 @@ function SearchPage() {
                 alt="Jumanji" />
         </div>
     </div>
+    </>
     )
 }
 
