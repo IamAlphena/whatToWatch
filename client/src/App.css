@@ -11,11 +11,20 @@ header {
   border-radius: 5px;
 }
 
-header nav{
+#navbar {
   text-align: right;
+  background-color: #ce1212;
+  border-radius: 5px;
+  color: #eeebdd;
 }
 
-.cardContainer{
+.navbar-item {
+  background-color: #ce1212;
+  color: #eeebdd;
+  border-radius: 5px;
+}
+
+.cardContainer {
   display: flex;
   flex-wrap: wrap;
 }
@@ -26,16 +35,16 @@ header nav{
   margin: 25px;
 }
 
-.card img{
+.card img {
   height: 200px;
   width: 150px;
 }
 
-.card:hover{
+.card:hover {
   opacity: 50%;
 }
 
-.details-container{
+.details-container {
   display: flex;
 }
 
@@ -43,11 +52,11 @@ header nav{
    border: 1px solid #810000;  
 } */
 
-.flexspace{
+.flexspace {
   display: flex;
 }
 
-.rating{
+.rating {
   margin-left: 25%;
 }
 
@@ -61,4 +70,5 @@ header nav{
   bottom: 0;
   right: 0;
   width: 100%;
+  padding: 10px;
 }
