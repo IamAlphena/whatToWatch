@@ -7,7 +7,7 @@ function SearchPage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.getMovie(title);
+    API.getBoth(title);
     console.log("the button was click");
     console.log(title);
   };
@@ -23,7 +23,7 @@ function SearchPage() {
         placeholder="Search" 
         onChange={(e)=>setTitle(e.target.value)}
         />
-        
+
         <input className="button is-small" type="submit" value="Submit" />
 
         <div>
