@@ -30,6 +30,12 @@ router.post('/login',function(req,res){
 
 })
 
+router.post('/login',function(req,res){
+  if(!loggedin){
+    return res.status(401).send()
+  }
+  return res.status(200).send("Welcome to a super secret API") 
+})
 //Sign Up
 router.post('/register',function(req,res){
   var username = req.body.username;
