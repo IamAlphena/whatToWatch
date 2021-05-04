@@ -7,8 +7,8 @@ const API = {
     const url = `https://api.themoviedb.org/3/search/multi/?api_key=${apiKey}&language=en-US&query=${title}&page=1&include_adult=false`;
 
     let movieData = await axios.get(url);
-    console.log(movieData);
-    // return movieData
+    // console.log(movieData);
+    return movieData
   },
 
   getTv: async (title) => {
