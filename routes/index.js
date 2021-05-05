@@ -2,12 +2,11 @@ const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
 const { request } = require("http");
-const User = require("../lib/User.js")
+const User = require("../models")
 
 //Login
 router.post('/login',function(req,res){
   var username = req.body.username;
-  var password = req.body.password;
 
   User.findOne({username:username}, function (err,user){
     if(err) {
@@ -33,9 +32,9 @@ router.post('/login',function(req,res){
 //Sign Up
 router.post('/register',function(req,res){
   var username = req.body.username;
-  var password = req.body.username;
-  var firstname = req.body.username;
-  var lastname = req.body.username;
+  var password = req.body.password;
+  var firstname = req.body.firstname;
+  var lastname = req.body.lastname;
 
   var newuser = new User();
   newuser.username = username;
