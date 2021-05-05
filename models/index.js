@@ -1,3 +1,4 @@
 module.exports = {
-    movie: require("./movies")
-}
+  movie: require("./movies"),
+  user: require("./User"),
+};
