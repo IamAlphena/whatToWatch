@@ -49,7 +49,7 @@ function SearchPage() {
 
       <div className="cardContainer">
         {results.length === 0 ? (<h2> No Results</h2>) : (results.map(card => (
-          <MovieCard key={card.id} image={card.image} title={card.title}/>
+          <MovieCard key={card.id} id={card.id} image={card.image} title={card.title}/>
         ))) 
       } 
           

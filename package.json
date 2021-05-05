@@ -38,6 +38,7 @@
     "init": "^0.1.2",
     "mongoose": "^5.12.7",
     "path": "^0.12.7",
-    "react-bulma-components": "^4.0.2"
+    "react-bulma-components": "^4.0.2",
+    "react-router-dom": "^5.2.0"
   }
 }
