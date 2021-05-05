@@ -35,7 +35,7 @@ const API = {
     const url = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`;
 
     let providerData = await axios.get(url);
-    // return providerData
+    return providerData
   },
 };
 
