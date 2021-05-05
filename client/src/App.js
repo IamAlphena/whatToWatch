@@ -16,7 +16,7 @@ function App() {
           <Route exact path='/' component={SearchPage} />
           <Route exact path='/details' component={MovieDetails} />
         </Switch>
-      <Footer />
+      {/* <Footer /> */}
       </div>
     </Router>
 

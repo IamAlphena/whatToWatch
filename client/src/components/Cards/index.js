@@ -1,13 +1,17 @@
 import React from 'react';
+import { Card } from 'react-bulma-components';
 
-function MovieCard() {
+function MovieCard(props) {
     return (
-    <div className="card">
-        <img 
-        src="https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" 
-        alt="Jumanji The Next Level" />
-    </div>
-    )
+       <Card style={{ width: 150, margin: 10, height: 'auto' }}>
+            <Card.Image
+        size="3by4"
+        src={props.image}
+         /> 
+         <Card.Header.Title style={{height: 'auto'}}>{props.title}</Card.Header.Title>
+         <button className="is-primary">Save</button>
+         </Card>            
+        )
 }
 
 export default MovieCard;

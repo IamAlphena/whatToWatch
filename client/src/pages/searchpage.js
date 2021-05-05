@@ -4,13 +4,26 @@ import API from "../utils/API"
 
 function SearchPage() {
   const [title, setTitle] = useState("");
+  const [results, setResults] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.getBoth(title);
-    console.log("the button was click");
-    console.log(title);
+    API.getBoth(title)
+      .then(res=>{
+        // console.log(res.data.results);
+        const movieSearch = res.data.results.map(info =>({
+          title: info.original_title,
+          id: info.id,
+          release: info.release_date,
+          image: `https://image.tmdb.org/t/p/w500/${info.poster_path}`,
+        }));
+        setResults(movieSearch)
+      })
+    // console.log("the button was click");
+    // console.log(title);
+    console.log(results)
   };
+
 
 
   return (
@@ -35,7 +48,11 @@ function SearchPage() {
       </form>
 
       <div className="cardContainer">
-        <MovieCard />
+        {results.length === 0 ? (<h2> No Results</h2>) : (results.map(card => (
+          <MovieCard key={card.id} image={card.image} title={card.title}/>
+        ))) 
+      } 
+          
       </div>
     </>
   );
