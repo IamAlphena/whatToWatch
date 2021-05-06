@@ -15,7 +15,7 @@ function DetailsCard(props) {
                     </div>
             </div>
             <div className="flexspace">
-                <button id="add">add to list</button>
+            <button className="is-primary" onClick={props.addFavorite}>Save</button>
                 <div className="rating"> {props.rating} </div>
             </div>
 

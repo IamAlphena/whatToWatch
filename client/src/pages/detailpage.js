@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useStoreContext } from "../utils/GlobalState";
+import { ADD_FAVORITE } from "../utils/action";
 import API from "../utils/API";
 import { useParams } from 'react-router-dom';
 import DetailsCard from '../components/DetailsCard';
-import WatchCard from '../components/ProviderDetails'
+import WatchCard from '../components/ProviderDetails';
+
 
 
 function MovieDetails() {
@@ -10,7 +13,8 @@ function MovieDetails() {
     const [buy, setBuy] = useState("");
     const [rent, setRent] = useState("");
     const [flatrate, setFlatrate] = useState("");
-   
+    const [state, dispatch] = useStoreContext()
+
     let {id} = useParams();
   
     useEffect(() =>{
@@ -27,6 +31,13 @@ function MovieDetails() {
               setResults(showDetails)
             })
     }, [])
+
+    const addFavorite = () => {
+    dispatch({
+      type:ADD_FAVORITE,
+      movie: id
+    })
+}
         
     useEffect(() =>{
         API.providers(id)
@@ -44,6 +55,8 @@ function MovieDetails() {
             })
     }, [])
 
+    console.log(state)
+
     return (
         <div>
             <DetailsCard 
@@ -53,6 +66,7 @@ function MovieDetails() {
             overview={results.overview}
             release={results.release}
             rating={results.rating}
+            addFavorite={addFavorite}
             />
 
             <div className="whereToWatch">
