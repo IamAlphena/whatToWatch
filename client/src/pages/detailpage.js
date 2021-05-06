@@ -1,4 +1,14 @@
 import React from 'react';
+import { REMOVE_FAVORITE } from "../utils/action";
+import { useStoreContext } from "../utils/GlobalState"
+
+
+ // const removeFavorite = () =>{
+  //   dispatch({
+  //     type:REMOVE_FAVORITE
+  //      _id: id
+  //   })
+  // }
 
 function MovieDetails() {
     return (
