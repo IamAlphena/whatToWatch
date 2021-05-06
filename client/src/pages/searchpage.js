@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import MovieCard from "../components/Cards";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/action";
 import API from "../utils/API"
 
 function SearchPage() {
   const [title, setTitle] = useState("");
   const [results, setResults] = useState("");
+  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +26,17 @@ function SearchPage() {
     console.log(results)
   };
 
+  // const addFavorite = () => {
+  //   dispatch({
+  //     type:ADD_FAVORITE
+  //   })
+  // }
 
+  // const removeFavorite = () =>{
+  //   dispatch({
+  //     type:REMOVE_FAVORITE
+  //   })
+  // }
 
   return (
     <>
