@@ -33,14 +33,7 @@ function SearchPage() {
       movie: state.id
     })
   }
-
-  // const removeFavorite = () =>{
-  //   dispatch({
-  //     type:REMOVE_FAVORITE
-  //      _id:
-  //   })
-  // }
-
+console.log(state)
   return (
     <>
       <form onSubmit={handleFormSubmit}>

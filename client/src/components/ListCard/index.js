@@ -14,7 +14,7 @@ function ListCard(props) {
         onClick={() => history.push(`/details/${props.id}`)}
          /> 
          <Card.Header.Title style={{height: 'auto'}}>{props.title}</Card.Header.Title>
-         <button className="is-primary">Remove</button>
+         <button className="is-primary" onClick={props.removeFavorite}>Remove</button>
          </Card>            
         )
 }
