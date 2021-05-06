@@ -20,12 +20,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/movieDB", function(err){
-  if (err){
-    return console.log(err)
-  }
-  return console.log("Successfully connected to Mongo");
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/movieDB")
+
 
 
 // Start the API server

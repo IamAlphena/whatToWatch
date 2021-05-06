@@ -2,15 +2,15 @@ const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
 const { request } = require("http");
-const User = require("../models")
+const db = require("../models")
 
 
 //Login
 router.post('/login', function (req, res) {
-  var username = req.body.username;
+  var userName = req.body.username;
   var password = req.body.password;
 
-  User.findOne({ username: username }, function (err, user) {
+  db.User.findOne({ username: userName }, function (err, user) {
     if (err) {
       console.log(err);
       return res.status(500).send()
@@ -56,7 +56,7 @@ router.post('/register', function (req, res) {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
 
-  var newuser = new User();
+  var newuser = new db.User();
   newuser.username = username;
   newuser.password = password;
   newuser.firstname = firstname;
