@@ -6,7 +6,9 @@ import WatchCard from '../components/ProviderDetails'
 
 function MovieDetails() {
     const [results, setResults] = useState("");
-    const [providers, setProviders] = useState("");
+    const [buy, setBuy] = useState("");
+    const [rent, setRent] = useState("");
+    const [flatrate, setFlatrate] = useState("");
    
     let {id} = useParams();
   
@@ -28,13 +30,16 @@ function MovieDetails() {
     useEffect(() =>{
         API.providers(id)
         .then(res=>{
-            const showProvider = {
-                       buy: res.data.results.US.buy,
-                       flatrate: res.data.results.US.flatrate,
-                       rent: res.data.results.US.rent
-                      };
-            console.log(showProvider)
-            setProviders(showProvider)
+            console.log(res)
+            const showBuy = res.data.results.US.buy;
+            console.log(showBuy)
+            setBuy(showBuy)
+            const showFlatrate = res.data.results.US.flatrate;
+            console.log(showFlatrate)
+            setFlatrate(showFlatrate)
+            const showRent = res.data.results.US.rent;
+            console.log(showRent)
+            setRent(showRent)
             })
     }, [])
 
@@ -51,36 +56,36 @@ function MovieDetails() {
 
             <div className="whereToWatch">
                 <p>Buy</p>
-                {providers.length === 0 ? (<h2>Not Currently Available</h2>) : (providers.buy.map(
-                    provider => (
+                {!buy ? (<h2>Not Currently Available</h2>) : (buy.map(
+                    buy => (
                         <WatchCard 
-                        key={provider.provider_id}
-                        image={provider.logo_path}
-                        provider={provider.provider_name}
+                        key={buy.provider_id}
+                        image={buy.logo_path}
+                        provider={buy.provider_name}
                         />
 
                     )
                 ))}
 
                 <p>Rent</p>
-                {providers.length === 0 ? (<h2>Not Currently Available</h2>) : (providers.rent.map(
-                    provider => (
+                {!rent ? (<h2>Not Currently Available</h2>) : (rent.map(
+                    rent => (
                         <WatchCard 
-                        key={provider.provider_id}
-                        image={provider.logo_path}
-                        provider={provider.provider_name}
+                        key={rent.provider_id}
+                        image={rent.logo_path}
+                        provider={rent.provider_name}
                         />
 
                     )
                 ))}
 
                 <p>Subscription</p>
-                {providers.length === 0 ? (<h2>Not Currently Available</h2>) : (providers.flatrate.map(
-                    provider => (
+                {!flatrate ? (<h2>Not Currently Available</h2>) : (flatrate.map(
+                    flatrate => (
                         <WatchCard 
-                        key={provider.provider_id}
-                        image={provider.logo_path}
-                        provider={provider.provider_name}
+                        key={flatrate.provider_id}
+                        image={flatrate.logo_path}
+                        provider={flatrate.provider_name}
                         />
 
                     )
