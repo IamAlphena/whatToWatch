@@ -55,7 +55,9 @@ function MovieDetails() {
             />
 
             <div className="whereToWatch">
+           
                 <p>Buy</p>
+                <div className="providerBox">
                 {!buy ? (<h2>Not Currently Available</h2>) : (buy.map(
                     buy => (
                         <WatchCard 
@@ -66,7 +68,8 @@ function MovieDetails() {
 
                     )
                 ))}
-
+                    </div>
+                    <div className="spacer"></div>
                 <p>Rent</p>
                 {!rent ? (<h2>Not Currently Available</h2>) : (rent.map(
                     rent => (
@@ -78,7 +81,7 @@ function MovieDetails() {
 
                     )
                 ))}
-
+                    <div className="spacer"></div>
                 <p>Subscription</p>
                 {!flatrate ? (<h2>Not Currently Available</h2>) : (flatrate.map(
                     flatrate => (
