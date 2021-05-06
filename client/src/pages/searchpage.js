@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import MovieCard from "../components/Cards";
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/action";
+import { ADD_FAVORITE } from "../utils/action";
+import { useStoreContext } from "../utils/GlobalState"
 import API from "../utils/API"
 
 function SearchPage() {
   const [title, setTitle] = useState("");
   const [results, setResults] = useState("");
-  
+  const [state, dispatch] = useStoreContext()
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -26,15 +27,17 @@ function SearchPage() {
     console.log(results)
   };
 
-  // const addFavorite = () => {
-  //   dispatch({
-  //     type:ADD_FAVORITE
-  //   })
-  // }
+  const addFavorite = () => {
+    dispatch({
+      type:ADD_FAVORITE,
+      movie: state.id
+    })
+  }
 
   // const removeFavorite = () =>{
   //   dispatch({
   //     type:REMOVE_FAVORITE
+  //      _id:
   //   })
   // }
 
@@ -61,7 +64,7 @@ function SearchPage() {
 
       <div className="cardContainer">
         {results.length === 0 ? (<h2> No Results</h2>) : (results.map(card => (
-          <MovieCard key={card.id} id={card.id} image={card.image} title={card.title}/>
+          <MovieCard key={card.id} image={card.image} title={card.title} addFavorite={addFavorite}/>
         ))) 
       } 
           

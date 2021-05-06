@@ -3,6 +3,16 @@ import API from "../utils/API";
 import { useParams } from 'react-router-dom';
 import DetailsCard from '../components/DetailsCard';
 import WatchCard from '../components/ProviderDetails'
+import { REMOVE_FAVORITE } from "../utils/action";
+import { useStoreContext } from "../utils/GlobalState"
+
+
+ // const removeFavorite = () =>{
+  //   dispatch({
+  //     type:REMOVE_FAVORITE
+  //      _id: id
+  //   })
+  // }
 
 function MovieDetails() {
     const [results, setResults] = useState("");

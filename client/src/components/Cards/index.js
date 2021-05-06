@@ -14,7 +14,7 @@ function MovieCard(props) {
         onClick={() => history.push(`/details/${props.id}`)}
          /> 
          <Card.Header.Title style={{height: 'auto'}}>{props.title}</Card.Header.Title>
-         <button className="is-primary">Save</button>
+         <button className="is-primary" onClick={addFavorite}>Save</button>
          </Card>            
         )
 }
