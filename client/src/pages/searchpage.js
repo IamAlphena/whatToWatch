@@ -7,7 +7,7 @@ import API from "../utils/API"
 function SearchPage() {
   const [title, setTitle] = useState("");
   const [results, setResults] = useState("");
-  
+  const [state, dispatch] = useStoreContext()
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +29,8 @@ function SearchPage() {
 
   const addFavorite = () => {
     dispatch({
-      type:ADD_FAVORITE
+      type:ADD_FAVORITE,
+      movie: state.id
     })
   }
 
@@ -63,7 +64,7 @@ function SearchPage() {
 
       <div className="cardContainer">
         {results.length === 0 ? (<h2> No Results</h2>) : (results.map(card => (
-          <MovieCard key={card.id} image={card.image} title={card.title}/>
+          <MovieCard key={card.id} image={card.image} title={card.title} addFavorite={addFavorite}/>
         ))) 
       } 
           
