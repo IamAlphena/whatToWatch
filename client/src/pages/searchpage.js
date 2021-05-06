@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MovieCard from "../components/Cards";
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/action";
+import { ADD_FAVORITE } from "../utils/action";
+import { useStoreContext } from "../utils/GlobalState"
 import API from "../utils/API"
 
 function SearchPage() {
@@ -26,15 +27,16 @@ function SearchPage() {
     console.log(results)
   };
 
-  // const addFavorite = () => {
-  //   dispatch({
-  //     type:ADD_FAVORITE
-  //   })
-  // }
+  const addFavorite = () => {
+    dispatch({
+      type:ADD_FAVORITE
+    })
+  }
 
   // const removeFavorite = () =>{
   //   dispatch({
   //     type:REMOVE_FAVORITE
+  //      _id:
   //   })
   // }
 

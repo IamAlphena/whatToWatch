@@ -13,8 +13,8 @@ const reducer = (state, action) => {
     case REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((post) => {
-          return post._id !== action._id;
+        favorites: state.favorites.filter((movie) => {
+          return movie._id !== action._id;
         }),
       };
 
@@ -30,4 +30,8 @@ const StoreProvider = ({ value = [], ...props }) => {
   return <Provider value={[state, dispatch]} {...props} />;
 };
 
-export { StoreProvider };
+const useStoreContext = () => {
+  return useContext(StoreContext);
+};
+
+export { StoreProvider, useStoreContext };
