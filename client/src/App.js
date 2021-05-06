@@ -4,6 +4,7 @@ import Header from "./components/Header";
 // import Footer from './components/Footer';
 import SearchPage from "./pages/searchpage";
 import MovieDetails from "./pages/detailpage";
+import MyList from "./pages/listpage"
 import Navbar from "./components/Navbar";
 import { StoreProvider } from "./utils/GlobalState";
 
@@ -17,6 +18,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={SearchPage} />
             <Route path="/details/:id" component={MovieDetails} />
+            <Route path="/mylist" component={MyList}/>
           </Switch>
           {/* <Footer /> */}
         </div>
