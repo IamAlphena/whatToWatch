@@ -11,7 +11,7 @@ function SearchPage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.getBoth(title)
+    API.getMovie(title)
       .then(res=>{
         // console.log(res.data.results);
         const movieSearch = res.data.results.map(info =>({
@@ -48,13 +48,13 @@ return (
         />
 
         <input className="button is-small" type="submit" value="Submit" />
-
+{/* 
         <div>
           <input type="checkbox" id="tv" name="tv" />
           <label htmlFor="tv">Tv Show</label>
           <input type="checkbox" id="movie" name="movie" />
           <label htmlFor="movie">Movie</label>
-        </div>
+        </div> */}
       </form>
 
       <div className="cardContainer">
