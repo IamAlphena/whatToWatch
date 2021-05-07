@@ -9,7 +9,6 @@ import MovieDetails from "./pages/detailpage";
 import MyList from "./pages/listpage"
 import Navbar from "./components/Navbar";
 import { StoreProvider } from "./utils/GlobalState";
-import { Hero } from "react-bulma-components";
 
 function App() {
   return (
@@ -17,9 +16,7 @@ function App() {
       <StoreProvider>
         <div>
           <Switch>
-          <Hero.Body>
             <Route exact path="/" component={LogIn} />
-            </Hero.Body>
             <Header />
             <Navbar />
             <Route exact path="/search" component={SearchPage} />
