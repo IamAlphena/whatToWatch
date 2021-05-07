@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import SearchPage from "./pages/searchpage";
 import MovieDetails from "./pages/detailpage";
 import MyList from "./pages/listpage"
@@ -20,7 +20,7 @@ function App() {
             <Route path="/details/:id" component={MovieDetails} />
             <Route path="/mylist" component={MyList}/>
           </Switch>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </StoreProvider>
     </Router>
