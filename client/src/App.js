@@ -6,6 +6,7 @@ import SearchPage from "./pages/searchpage";
 import LogIn from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import MovieDetails from "./pages/detailpage";
+import MyList from "./pages/listpage"
 import Navbar from "./components/Navbar";
 import { StoreProvider } from "./utils/GlobalState";
 import { Hero } from "react-bulma-components";
@@ -23,6 +24,7 @@ function App() {
             <Navbar />
             <Route exact path="/search" component={SearchPage} />
             <Route path="/details/:id" component={MovieDetails} />
+            <Route path="/mylist" component={MyList}/>
           </Switch>
           {/* <Footer /> */}
         </div>
