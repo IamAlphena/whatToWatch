@@ -83,7 +83,7 @@ function SignUp() {
           Register
         </Button>
         <Button fullwidth rounded color="primary" onClick={handleSubmit}>
-          
+          Already have an account? <a>Sign in</a>
         </Button>
       </Button.Group>
     </>

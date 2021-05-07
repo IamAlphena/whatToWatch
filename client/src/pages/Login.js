@@ -10,7 +10,7 @@ function LogIn() {
     e.preventDefault();
     const { data } = await axios.post("/api/user/login", {
       username,
-      password,
+      password
     });
     // store in your global state, that a user has logged in.
   }
