@@ -1,20 +1,22 @@
-import React, { useReducer } from "react";
+import React, { useReducer, createContext, useContext } from "react";
 import { ADD_FAVORITE, REMOVE_FAVORITE } from "./action";
+
+const StoreContext = createContext();
+const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: [action.post, ...state.favorites],
-        loading: false,
+        favorites: [action.movie, ...state.favorites]
       };
 
     case REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((post) => {
-          return post._id !== action._id;
+        favorites: state.favorites.filter((movie) => {
+          return movie._id !== action._id;
         }),
       };
 
@@ -30,4 +32,8 @@ const StoreProvider = ({ value = [], ...props }) => {
   return <Provider value={[state, dispatch]} {...props} />;
 };
 
-export { StoreProvider };
+const useStoreContext = () => {
+  return useContext(StoreContext);
+};
+
+export { StoreProvider, useStoreContext };

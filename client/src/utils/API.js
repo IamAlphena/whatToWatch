@@ -23,10 +23,19 @@ const API = {
     let movieData = await axios.get(url);
   },
 
+  getDetails: async (id) => {
+    const url = `
+    https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+
+    let getDetails = await axios.get(url);
+    return getDetails
+  },
+
   providers: async (id) => {
     const url = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`;
 
     let providerData = await axios.get(url);
+    return providerData
   },
 };
 

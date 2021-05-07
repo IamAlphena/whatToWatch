@@ -5,6 +5,7 @@ const { request } = require("http");
 const db = require("../models")
 
 
+
 //Login
 router.post('/login', function (req, res) {
   var userName = req.body.username;
@@ -30,7 +31,6 @@ router.post('/login', function (req, res) {
       notfoundCallback(user)
     }
   });
-
 })
 
 

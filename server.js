@@ -16,6 +16,7 @@ app.use(session({secret:"7jhdsfy88ry3hf8bcu89xby34",resave:false, saveUninitiali
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+const bodyParser = require('body-parser'); // middleware
 // Add routes, both API and view
 app.use(routes);
 

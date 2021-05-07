@@ -1,24 +1,99 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import API from "../utils/API";
+import { useParams } from 'react-router-dom';
+import DetailsCard from '../components/DetailsCard';
+import WatchCard from '../components/ProviderDetails'
+
 
 function MovieDetails() {
+    const [results, setResults] = useState("");
+    const [buy, setBuy] = useState("");
+    const [rent, setRent] = useState("");
+    const [flatrate, setFlatrate] = useState("");
+   
+    let {id} = useParams();
+  
+    useEffect(() =>{
+        API.getDetails(id)
+        .then(res=>{
+            const showDetails = {
+                        title: res.data.original_title,
+                        id: res.data.id,
+                        release: res.data.release_date,
+                        image: `https://image.tmdb.org/t/p/w500/${res.data.poster_path}`,
+                        backsplash:  `https://image.tmdb.org/t/p/w500/${res.data.backdrop_path}`,
+                        overview: res.data.overview,
+                      };
+              setResults(showDetails)
+            })
+    }, [])
+        
+    useEffect(() =>{
+        API.providers(id)
+        .then(res=>{
+            console.log(res)
+            const showBuy = res.data.results.US.buy;
+            console.log(showBuy)
+            setBuy(showBuy)
+            const showFlatrate = res.data.results.US.flatrate;
+            console.log(showFlatrate)
+            setFlatrate(showFlatrate)
+            const showRent = res.data.results.US.rent;
+            console.log(showRent)
+            setRent(showRent)
+            })
+    }, [])
+
     return (
         <div>
-        <div className="details-container">
-            <div className="card">
-                <img src="https://m.media-amazon.com/images/M/MV5BODQ0NDhjYWItYTMxZi00NTk2LWIzNDEtOWZiYWYxZjc2MTgxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg"
-                    alt="Jumanji Welcome to the Jungle" />
-        </div>
-                <div className="desc"><p>
-                    Four high school kids discover an old video game console and are drawn into the game's jungle setting, literally becoming the adult avatars they chose. What they discover is that you don't just play Jumanji - you must survive it. To beat the game and return to the real world, they'll have to go on the most dangerous adventure of their lives, discover what Alan Parrish left 20 years ago, and change the way they think about themselves - or they'll be stuck in the game forever.
-        </p></div>
-            </div>
-            <div className="flexspace">
-                <button id="add">add to list</button>
-                <div className="rating"> Overall Rating : 7 out of 10  </div>
-            </div>
+            <DetailsCard 
+            key={results.id}
+            image={results.image}
+            title={results.title}
+            overview={results.overview}
+            release={results.release}
+            rating={results.rating}
+            />
 
             <div className="whereToWatch">
-                <p>Where to watch data here</p>
+           
+                <p>Buy</p>
+                <div className="providerBox">
+                {!buy ? (<h2>Not Currently Available</h2>) : (buy.map(
+                    buy => (
+                        <WatchCard 
+                        key={buy.provider_id}
+                        image={buy.logo_path}
+                        provider={buy.provider_name}
+                        />
+
+                    )
+                ))}
+                    </div>
+                    <div className="spacer"></div>
+                <p>Rent</p>
+                {!rent ? (<h2>Not Currently Available</h2>) : (rent.map(
+                    rent => (
+                        <WatchCard 
+                        key={rent.provider_id}
+                        image={rent.logo_path}
+                        provider={rent.provider_name}
+                        />
+
+                    )
+                ))}
+                    <div className="spacer"></div>
+                <p>Subscription</p>
+                {!flatrate ? (<h2>Not Currently Available</h2>) : (flatrate.map(
+                    flatrate => (
+                        <WatchCard 
+                        key={flatrate.provider_id}
+                        image={flatrate.logo_path}
+                        provider={flatrate.provider_name}
+                        />
+
+                    )
+                ))}
             </div>
             </div>
     )
