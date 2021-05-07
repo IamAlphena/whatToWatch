@@ -43,6 +43,7 @@ function ListPage() {
       }
     }
   }
+  //how to render while hittting api calls per item on list ? .map vs foreach()
 
   //   useEffect(() =>{
   //     API.getDetails()
