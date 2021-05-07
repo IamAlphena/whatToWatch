@@ -4,7 +4,6 @@ import { REMOVE_FAVORITE } from "../utils/action";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState"
 
-// import API from "../utils/API"  -- possible need to get things connected
 
 function ListPage() {
   const [state, dispatch] = useStoreContext();

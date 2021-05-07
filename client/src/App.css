@@ -1,4 +1,6 @@
-
+/******
+Base Stlyes
+*****/
 
 body {
   background: #1b1717;
@@ -11,6 +13,18 @@ body {
   height: 100%;
 }
 
+.fill{
+  height: 88vh;
+  /* margin: 0; */
+  text-align: center;
+  margin-left: 25%;
+  font-size: 25px;
+}
+
+/******
+Header
+*****/
+
 .header {
   background-color: #ce1212;
   width: 100%;
@@ -18,6 +32,10 @@ body {
   border-radius: 5px;
   
 }
+
+/******
+Nav Bar
+*****/
 
 #navbar {
   text-align: right;
@@ -31,6 +49,10 @@ body {
   color: #eeebdd;
   border-radius: 5px;
 }
+
+/******
+Card Details
+*****/
 
 .cardContainer {
   display: flex;
@@ -54,13 +76,26 @@ body {
   opacity: 50%;
 }
 
+/******
+Form Styles
+*****/
+
+form{
+  margin: 25px;
+}
+
+.searchBar{
+  height: 30px;
+  width: 300px;
+}
+
+/******
+Details
+*****/
+
 .details-container {
   display: flex;
 }
-
-/* .desc{
-   border: 1px solid #810000;  
-} */
 
 .flexspace {
   display: flex;
@@ -70,9 +105,31 @@ body {
   margin-left: 25%;
 }
 
+/******
+Provider Render
+*****/
+
 .whereToWatch {
   margin-left: 25%;
 }
+
+.icon {
+  height: 30px;
+  width: 30px;
+}
+
+.providerBox{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.providerList {
+  margin: 10px;
+}
+
+/******
+Footer
+*****/
 
 .footer {
   position: fixed;
@@ -86,36 +143,14 @@ body {
   font-size: 7px;
 }
 
-.icon {
-  height: 30px;
-  width: 30px;
-}
-
-.providerBox{
-  display: flex;
-  flex-wrap: wrap;
-}
-
+/******
+Misc
+*****/
 .spacer{
   height: 50px;
 }
 
-.providerList {
-  margin: 10px;
-}
-.fill{
-  height: 88vh;
-  /* margin: 0; */
-  text-align: center;
-  margin-left: 25%;
-  font-size: 25px;
-}
 
-form{
-  margin: 25px;
-}
 
-.searchBar{
-  height: 30px;
-  width: 300px;
-}
+
+
