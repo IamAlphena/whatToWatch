@@ -15,7 +15,7 @@ function SearchPage() {
       .then(res => {
         // console.log(res.data.results);
         const movieSearch = res.data.results.map(info => ({
-          title: info.original_title,
+          title: info.title,
           id: info.id,
           release: info.release_date,
           image: `https://image.tmdb.org/t/p/w500/${info.poster_path}`,
@@ -44,7 +44,7 @@ function SearchPage() {
           value={title}
           type="text"
           name="search"
-          placeholder="Search"
+          placeholder="Search for Movies"
           onChange={(e) => setTitle(e.target.value)}
         />
 
