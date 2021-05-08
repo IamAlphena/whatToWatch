@@ -43,13 +43,13 @@ function MovieDetails() {
         API.providers(id)
         .then(res=>{
             console.log(res)
-            const showBuy = res.data.results.US.buy;
+            const showBuy = res.data.results.US ? res.data.results.US.buy: null 
             console.log(showBuy)
             setBuy(showBuy)
-            const showFlatrate = res.data.results.US.flatrate;
+            const showFlatrate = res.data.results.US ? res.data.results.US.flatrate: null 
             console.log(showFlatrate)
             setFlatrate(showFlatrate)
-            const showRent = res.data.results.US.rent;
+            const showRent = res.data.results.US ? res.data.results.US.rent: null 
             console.log(showRent)
             setRent(showRent)
             })

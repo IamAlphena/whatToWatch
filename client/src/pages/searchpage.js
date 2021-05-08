@@ -3,6 +3,7 @@ import MovieCard from "../components/Cards";
 // import { ADD_FAVORITE } from "../utils/action";
 // import { useStoreContext } from "../utils/GlobalState"
 import API from "../utils/API";
+import { Button } from 'react-bulma-components';
 
 function SearchPage() {
   const [title, setTitle] = useState("");
@@ -47,7 +48,11 @@ function SearchPage() {
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <input className="button is-small" type="submit" value="Submit" />
+        <Button 
+          color="danger"
+          type="submit"
+          value="Submit" > Search </Button>
+        {/* <input className="button is-small" type="submit" value="Submit" /> */}
         {/* 
         <div>
           <input type="checkbox" id="tv" name="tv" />
