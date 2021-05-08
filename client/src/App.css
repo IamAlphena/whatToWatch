@@ -20,6 +20,10 @@ body {
   color: #eeebdd;
 }
 
+@font-face {
+  font-family: filmLetters;
+  src: url();
+}
 
 /******
 Header
@@ -28,6 +32,11 @@ Header
 .header {
   background-color: #ce1212;
   width: 100%;
+}
+
+header p {
+  text-align: center;
+  font-size: 45px;
 }
 
 /******
