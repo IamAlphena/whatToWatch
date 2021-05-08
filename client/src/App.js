@@ -6,7 +6,7 @@ import SearchPage from "./pages/searchpage";
 import LogIn from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import MovieDetails from "./pages/detailpage";
-import MyList from "./pages/listpage"
+import MyList from "./pages/listpage";
 import Navbar from "./components/Navbar";
 import { StoreProvider } from "./utils/GlobalState";
 
@@ -15,14 +15,14 @@ function App() {
     <Router>
       <StoreProvider>
         <div>
+          <Header />
+          <Navbar />
           <Switch>
-            <Route exact path="/" component={LogIn} />
+            <Route exact path="/" component={SearchPage} />
+            <Route exact path="/login" component={LogIn} />
             <Route exact path="/register" component={SignUp} />
-            <Header />
-            <Navbar />
-            <Route exact path="/search" component={SearchPage} />
             <Route path="/details/:id" component={MovieDetails} />
-            <Route path="/mylist" component={MyList}/>
+            <Route path="/mylist" component={MyList} />
           </Switch>
           {/* <Footer /> */}
         </div>
