@@ -17,6 +17,9 @@ function SignUp() {
       lastname
     });
     // store in your global state, that a user has logged in.
+    const userObj = {userName: username, passWord: password};
+    sessionStorage.setItem('User', JSON.stringify(userObj));
+    console.log(sessionStorage.getItem('User'));
   }
 
   return (
@@ -27,8 +30,8 @@ function SignUp() {
           <Form.Input
             placeholder="First Name"
             name="name"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={firstname}
+            onChange={(e) => setFirstname(e.target.value)}
           />
           <Icon align="left">
             <i className="github" />
@@ -41,8 +44,8 @@ function SignUp() {
           <Form.Input
             placeholder="Last Name"
             name="name"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
           />
           <Icon align="left">
             <i className="github" />
@@ -81,9 +84,6 @@ function SignUp() {
       <Button.Group>
         <Button fullwidth rounded color="primary" onClick={handleSubmit}>
           Register
-        </Button>
-        <Button fullwidth rounded color="primary" onClick={handleSubmit}>
-          Already have an account? <a>Sign in</a>
         </Button>
       </Button.Group>
     </>

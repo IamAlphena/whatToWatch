@@ -33,7 +33,7 @@ app.post("/searchpage", function (req, res) {
   if (!req.session.user) {
     return res.status(401).send();
   }
-  return res.status(200).send("You are logged in!");
+  return res.status(200).send("/searchpage");
 });
 
 // If no API routes are hit, send the React app

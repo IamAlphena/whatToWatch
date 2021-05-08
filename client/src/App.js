@@ -17,6 +17,7 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/" component={LogIn} />
+            <Route exact path="/register" component={SignUp} />
             <Header />
             <Navbar />
             <Route exact path="/search" component={SearchPage} />
