@@ -14,7 +14,7 @@ function SearchPage() {
     API.getMovie(title).then((res) => {
       // console.log(res.data.results);
       const movieSearch = res.data.results.map((info) => ({
-        title: info.original_title,
+        title: info.title,
         id: info.id,
         release: info.release_date,
         image: `https://image.tmdb.org/t/p/w500/${info.poster_path}`,
@@ -39,10 +39,11 @@ function SearchPage() {
     <>
       <form onSubmit={handleFormSubmit}>
         <input
+          className="searchBar"
           value={title}
           type="text"
           name="search"
-          placeholder="Search"
+          placeholder="Search for Movies"
           onChange={(e) => setTitle(e.target.value)}
         />
 
@@ -58,7 +59,7 @@ function SearchPage() {
 
       <div className="cardContainer">
         {results.length === 0 ? (
-          <h2>No Results</h2>
+          <h2 className="fill"> No Results</h2>
         ) : (
           results.map((card) => (
             <MovieCard
