@@ -53,6 +53,8 @@ function SearchPage() {
           ))
         )}
       </div>
+      <div className="spacer">
+      </div>
     </>
   );
 }
