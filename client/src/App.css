@@ -1,6 +1,14 @@
 /******
 Base Stlyes
 *****/
+html {
+  background: #1b1717;
+  background: -moz-linear-gradient(top,  #1b1717 0%, #151212 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #1b1717 0%,#151212 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #1b1717 0%,#151212  100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b1717', endColorstr='#151212',GradientType=0 ); /* IE6-9 */
+  background-attachment: fixed;
+}
 
 body {
   background: #1b1717;
@@ -10,16 +18,8 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b1717', endColorstr='#151212',GradientType=0 ); /* IE6-9 */
   background-attachment: fixed;
   color: #eeebdd;
-  height: 100%;
 }
 
-.fill{
-  height: 88vh;
-  /* margin: 0; */
-  text-align: center;
-  margin-left: 25%;
-  font-size: 25px;
-}
 
 /******
 Header
@@ -28,9 +28,6 @@ Header
 .header {
   background-color: #ce1212;
   width: 100%;
-  border: 1px solid #810000;
-  border-radius: 5px;
-  
 }
 
 /******
@@ -40,14 +37,12 @@ Nav Bar
 #navbar {
   text-align: right;
   background-color: #ce1212;
-  border-radius: 5px;
   color: #eeebdd;
 }
 
 .navbar-item {
   background-color: #ce1212;
   color: #eeebdd;
-  border-radius: 5px;
 }
 
 /******
@@ -57,14 +52,12 @@ Card Details
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  /* height: 100%; */
 }
 
 .card {
   height: auto;
   width: 150px;
   margin: 15px;
-  /* background-color: #ce0000; */
 }
 
 .card img {
@@ -85,7 +78,7 @@ form{
 }
 
 .searchBar{
-  height: 30px;
+  height: 40px;
   width: 300px;
 }
 
