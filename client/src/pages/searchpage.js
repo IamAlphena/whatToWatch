@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MovieCard from "../components/Cards";
 // import { ADD_FAVORITE } from "../utils/action";
 // import { useStoreContext } from "../utils/GlobalState"
-import API from "../utils/API"
+import API from "../utils/API";
 
 function SearchPage() {
   const [title, setTitle] = useState("");
@@ -11,20 +11,19 @@ function SearchPage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    API.getMovie(title)
-      .then(res => {
-        // console.log(res.data.results);
-        const movieSearch = res.data.results.map(info => ({
-          title: info.title,
-          id: info.id,
-          release: info.release_date,
-          image: `https://image.tmdb.org/t/p/w500/${info.poster_path}`,
-        }));
-        setResults(movieSearch)
-      })
+    API.getMovie(title).then((res) => {
+      // console.log(res.data.results);
+      const movieSearch = res.data.results.map((info) => ({
+        title: info.title,
+        id: info.id,
+        release: info.release_date,
+        image: `https://image.tmdb.org/t/p/w500/${info.poster_path}`,
+      }));
+      setResults(movieSearch);
+    });
     // console.log("the button was click");
     // console.log(title);
-    console.log(results)
+    console.log(results);
   };
 
   // const addFavorite = () => {
@@ -57,15 +56,21 @@ function SearchPage() {
           <label htmlFor="movie">Movie</label>
         </div> */}
       </form>
-   
-      <div className="cardContainer">
-        {results.length === 0 ? (<h2 className="fill"> No Results</h2>) : (results.map(card => (
-          <MovieCard key={card.id} image={card.image} title={card.title} id={card.id} />
-        )))
-        }
 
+      <div className="cardContainer">
+        {results.length === 0 ? (
+          <h2 className="fill"> No Results</h2>
+        ) : (
+          results.map((card) => (
+            <MovieCard
+              key={card.id}
+              image={card.image}
+              title={card.title}
+              id={card.id}
+            />
+          ))
+        )}
       </div>
-    
     </>
   );
 }

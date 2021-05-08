@@ -21,19 +21,25 @@ function Navbar() {
 
         <div id="navbar" className="navbar-menu">
           <div className="navbar-start">
-            <Link className="navbar-item" to="/">Search</Link>
+            <Link className="navbar-item" to="/">
+              Search
+            </Link>
 
-            <Link className="navbar-item" to="/mylist">My List</Link>
+            <Link className="navbar-item" to="/mylist">
+              My List
+            </Link>
           </div>
         </div>
 
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary">
+              <Link to="/register" className="button is-primary">
                 <strong>Sign up</strong>
-              </a>
-              <a className="button is-light">Log in</a>
+              </Link>
+              <Link to="/login" className="button is-light">
+                Log in
+              </Link>
             </div>
           </div>
         </div>
