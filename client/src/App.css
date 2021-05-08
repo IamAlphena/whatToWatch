@@ -34,9 +34,10 @@ Header
   width: 100%;
 }
 
-header p {
-  text-align: center;
-  font-size: 45px;
+header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /******
@@ -52,6 +53,16 @@ Nav Bar
 .navbar-item {
   background-color: #ce1212;
   color: #eeebdd;
+}
+
+.collapse{
+  background-color: #ce1212;
+  margin-right: 0;
+  width: 100%;
+}
+
+.collapse :hover {
+  background-color: #810000;
 }
 
 /******
@@ -83,7 +94,9 @@ Form Styles
 *****/
 
 form{
-  margin: 25px;
+  margin-top: 20px;
+  margin-left: 35%;
+  margin-right: 20%;
 }
 
 .searchBar{
@@ -150,6 +163,13 @@ Misc
 *****/
 .spacer{
   height: 50px;
+}
+
+.noResult{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 35px;
 }
 
 
