@@ -3,7 +3,7 @@ import React from 'react';
 
 function Header() {
     return (
-        <header>
+        <header className="header">
         <p>What to Watch</p>
     </header>
     )

@@ -8,9 +8,9 @@ import { useStoreContext } from "../utils/GlobalState"
 
 function ListPage() {
   const [state, dispatch] = useStoreContext();
-  const [results, setResults] = useState("");
+  const [list, setList] = useState("");
 
-  console.log(state)
+  console.log(state.favorites)
   // Code needed to make sure we're importing StoreProvider properly to pass into props below 
   // const removeFavorite = () => {
   //   dispatch({
@@ -20,51 +20,27 @@ function ListPage() {
   // }
 
 
-  function getAPI() {
-    API.getDetails()
+
+    useEffect(() =>{
+      Promise.all(state.favorites.map(item => API.getDetails(item)))
       .then(res => {
-        const showDetails = {
-          title: res.data.original_title,
-          id: res.data.id,
-          image: `https://image.tmdb.org/t/p/w500/${res.data.poster_path}`,
-        };
-        console.log(showDetails)
-        setResults(showDetails)
+        const listDetails = res.map( info => ({
+          title: info.data.title,
+          id: info.data.id,
+          image: `https://image.tmdb.org/t/p/w500/${info.data.poster_path}`,
+        }));
+        setList(listDetails)
       })
-  }
+  }, [])
 
 
-  function useAPI() {
-    if (!state) {
-      console.log("empty list")
-    } else {
-      for (var i = 0; i < state.length; i++) {
-        getAPI(state[i])
-      }
-    }
-  }
-  //how to render while hittting api calls per item on list ? .map vs foreach()
-
-  //   useEffect(() =>{
-  //     API.getDetails()
-  //     .then(res=>{
-  //         const showDetails = {
-  //                     title: res.data.original_title,
-  //                     id: res.data.id,
-  //                     image: `https://image.tmdb.org/t/p/w500/${res.data.poster_path}`,
-  //                   };
-  //           setResults(showDetails)
-  //         })
-  // }, [])
 
   return (
     <>
+    
       <div className="cardContainer">
 
-        <h2>wooorking for the weeekend</h2>
-        <button onClick={useAPI}> Render </button>
-
-        {/* {state.length === 0 ? (<h2> No Results</h2>) : (state.map(card => (
+        {list.length === 0 ? (<h2 className="fill"> No Results</h2>) : (list.map(card => (
           <ListCard
             key={card.id}
             id={card.id}
@@ -73,7 +49,7 @@ function ListPage() {
             // removeFavorite={removeFavorite}
             />
         )))
-        } */}
+        }
       </div>
     </>
   );

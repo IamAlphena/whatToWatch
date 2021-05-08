@@ -19,9 +19,15 @@ router.post("/login", function (req, res) {
     req.session.user = user;
     user.comparePassword(password, function (err, isMatch) {
       if (isMatch) {
-        return res.status(200).send("Successfully Logged In");
+        return res.status(200).json({
+          username: user.username,
+          firstname: user.firstname,
+          lastname: user.lastname,
+        });
       } else {
-        return res.status(500).send();
+        return res
+          .status(401)
+          .send("User doesn't exist or password was incorrect");
       }
     });
   });

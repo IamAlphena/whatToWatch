@@ -1,5 +1,5 @@
 import React, { useReducer, createContext, useContext } from "react";
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "./action";
+import { ADD_FAVORITE, REMOVE_FAVORITE, USER_LOGIN } from "./action";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: [action.movie, ...state.favorites]
+        favorites: [action.movie, ...state.favorites],
       };
 
     case REMOVE_FAVORITE:
@@ -18,6 +18,11 @@ const reducer = (state, action) => {
         favorites: state.favorites.filter((movie) => {
           return movie._id !== action._id;
         }),
+      };
+    case USER_LOGIN:
+      return {
+        ...state,
+        user: action.payload,
       };
 
     default:
@@ -37,3 +42,6 @@ const useStoreContext = () => {
 };
 
 export { StoreProvider, useStoreContext };
+
+
+//save to rec.session.user

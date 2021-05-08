@@ -1,21 +1,28 @@
 import React, { useState } from "react";
+import { useStoreContext } from "../utils/GlobalState";
+import { USER_LOGIN } from "../utils/action";
 import axios from "axios";
-import { Link, Redirect, useHistory } from "react-router-dom";
 import { Form, Button, Icon } from "react-bulma-components";
 
 function LogIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [state, dispatch] = useStoreContext();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const { data } = await axios.post("/api/user/login", {
-      username,
-      password
-    });
-
-    // store in your global state, that a user has logged in.
-  
+    try {
+      const { data } = await axios.post("/api/user/login", {
+        username,
+        password,
+      });
+      dispatch({
+        type: USER_LOGIN,
+        payload: data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
