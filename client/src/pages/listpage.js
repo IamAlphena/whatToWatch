@@ -39,7 +39,7 @@ function ListPage() {
     
       <div className="cardContainer ">
 
-        {list.length === 0 ? (<h2 className="fill"> No Results</h2>) : (list.map(card => (
+        {list.length === 0 ? (<h2 className="noResult"> No Results</h2>) : (list.map(card => (
           <ListCard
             key={card.id}
             id={card.id}

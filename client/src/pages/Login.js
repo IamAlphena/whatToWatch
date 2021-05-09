@@ -36,7 +36,6 @@ function LogIn() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-     
         </Form.Control>
       </Form.Field>
       <Form.Field>
@@ -49,7 +48,6 @@ function LogIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-     
         </Form.Control>
       </Form.Field>
       <div className="spacer"></div>
