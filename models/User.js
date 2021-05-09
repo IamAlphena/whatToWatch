@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String },
   firstname: String,
   lastname: String,
+  favorites: [Number],
 });
 
 userSchema.pre("save", function (next) {
