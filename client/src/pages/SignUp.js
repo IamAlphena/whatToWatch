@@ -33,9 +33,6 @@ function SignUp() {
             value={firstname}
             onChange={(e) => setFirstname(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
         </Form.Control>
       </Form.Field>
       <Form.Field>
@@ -47,9 +44,6 @@ function SignUp() {
             value={lastname}
             onChange={(e) => setLastname(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
         </Form.Control>
       </Form.Field>
       <Form.Field>
@@ -61,9 +55,6 @@ function SignUp() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
         </Form.Control>
       </Form.Field>
       <Form.Field>
@@ -76,15 +67,14 @@ function SignUp() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
         </Form.Control>
       </Form.Field>
       <Button.Group>
-        <Button fullwidth rounded color="primary" onClick={handleSubmit}>
+        <div className="btn">
+        <Button fullwidth rounded color="link" onClick={handleSubmit}>
           Register
         </Button>
+        </div>
       </Button.Group>
     </>
   );

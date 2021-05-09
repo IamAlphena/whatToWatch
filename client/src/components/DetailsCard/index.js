@@ -1,22 +1,24 @@
 import React from 'react';
+import {Button} from 'react-bulma-components';
 
 
 function DetailsCard(props) {
     return(
         <>
         <div className="details-container">
-            <div className="card">
+            <div className="detailsCard">
                 <img src={props.image}
                     alt={props.title} />
         </div>
                 <div className="desc">
-                    <p>{props.overview}</p>
-                    <p>{props.release}</p>
+                    <h1 className="descTitle">{props.title}</h1>
+                    <p className="descDetails">{props.overview}</p>
+                
+                    <p className="release">Original Release: {props.release}</p>
                     </div>
-            </div>
+                    </div> 
             <div className="flexspace">
-            <button className="is-primary" onClick={props.addFavorite}>Save</button>
-                <div className="rating"> {props.rating} </div>
+            <Button className=" is-outlined savebtn" onClick={props.addFavorite}>Save</Button>
             </div>
 
    </>
