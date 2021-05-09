@@ -24,6 +24,7 @@ npm i express express-session path
 and axios, bcrypt, if-env
 ```
 npm i axios bcrypt if-env
+``` 
 
 ## Wireframe
 https://www.figma.com/file/OS1pHI02fjtRalUlfcoKR3/Untitled?node-id=1%3A33 
