@@ -34,7 +34,7 @@ function SearchPage() {
         />
 
         <Button 
-          color="danger"
+          color="link"
           type="submit"
           value="Submit" > Search </Button>
       </form>

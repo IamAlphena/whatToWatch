@@ -3,7 +3,7 @@ import React from 'react'
 function Footer(){
     return (
         <div className="footer">
-            <p>I am the footer</p>
+            <p> &#169; 2021 </p>
         </div>
     )
 }

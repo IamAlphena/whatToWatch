@@ -27,7 +27,7 @@ function LogIn() {
 
   return (
     <>
-      <Form.Field>
+      <Form.Field >
         <Form.Label>User Name</Form.Label>
         <Form.Control>
           <Form.Input
@@ -36,9 +36,7 @@ function LogIn() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
+     
         </Form.Control>
       </Form.Field>
       <Form.Field>
@@ -51,15 +49,16 @@ function LogIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Icon align="left">
-            <i className="github" />
-          </Icon>
+     
         </Form.Control>
       </Form.Field>
+      <div className="spacer"></div>
       <Button.Group>
-        <Button fullwidth rounded color="primary" onClick={handleSubmit}>
+        <div className="btn">
+        <Button fullwidth rounded color="link" onClick={handleSubmit}>
           Login
         </Button>
+        </div>
       </Button.Group>
     </>
   );
